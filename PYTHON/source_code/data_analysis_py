@@ -1,0 +1,22 @@
+import statistics
+def analyze_sales():
+    try:
+        file = open("sales.txt", "r")
+        data = file.readlines()
+        sales = [float(i.strip()) for i in data]
+        file.close()
+
+        mean_value = statistics.mean(sales)
+        median_value = statistics.median(sales)
+
+        print("Sales Data:", sales)
+        print("Mean:", mean_value)
+        print("Median:", median_value)
+
+    except FileNotFoundError:
+        print("File not found")
+
+    except ValueError:
+        print("Invalid data in file")
+
+analyze_sales()

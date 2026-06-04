@@ -1,0 +1,23 @@
+class Employee:
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    @classmethod
+    def from_string(cls, emp_data):
+
+        name, salary = emp_data.split(",")
+
+        salary = int(salary)
+
+        return cls(name, salary)
+
+    def display(self):
+        print("Employee Name:", self.name)
+        print("Salary:", self.salary)
+
+
+emp = Employee.from_string("Selvi,75000")
+
+emp.display()

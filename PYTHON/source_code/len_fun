@@ -1,0 +1,11 @@
+
+def string_length(text):
+
+    if text == "":
+        print("String is empty")
+        return
+    length = len(text)
+
+    print("Length of string:", length)
+
+string_length("Python")
